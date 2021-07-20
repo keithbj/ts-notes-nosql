@@ -1,0 +1,8 @@
+{
+  "dbShema": "mongodb",
+  "dbServer": "localhost",
+  "db": "notes",
+  "dbUser": "",
+  "dbPassword": "",
+  "dbPort": "27017"
+}

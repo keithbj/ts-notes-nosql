@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  notes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: notes-js
+    container_name: notes
+    #    restart: unless-stopped
+    env_file: .env
+    environment:
+      - NODE_ENV=$NODE_ENV
+      - NOTES_MONGODB_SCHEMA=$NOTES_MONGODB_SCHEMA
+      - NOTES_MONGODB_SERVER=$NOTES_MONGODB_SERVER
+      - NOTES_MONGODB_DATABASE=$NOTES_MONGODB_DATABASE
+      - NOTES_MONGO_USERNAME=$NOTES_MONGO_USERNAME
+      - NOTES_MONGO_PASSWORD=$NOTES_MONGO_PASSWORD
+      - NOTES_MONGO_PORT=$NOTES_MONGO_PORT
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    networks:
+      - app-network
+    command: node dist/app.js
+
+  db:
+    image: mongo:4.2.0-bionic
+    container_name: db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$NOTES_MONGODB_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD=$NOTES_MONGODB_PASSWORD
+    ports:
+      - '27018:27017'
+    volumes:
+      - dbdata:/data/notes-db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:

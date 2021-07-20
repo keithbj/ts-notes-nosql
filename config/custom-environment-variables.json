@@ -1,0 +1,8 @@
+{
+  "dbShema": "NOTES_MONGODB_SCHEMA",
+  "dbServer": "NOTES_MONGODB_SERVER",
+  "db": "NOTES_MONGODB_DATABASE",
+  "dbUser": "NOTES_MONGODB_USERNAME",
+  "dbPassword": "NOTES_MONGODB_PASSWORD",
+  "dbPort": "NOTES_MONGODB_PORT"
+}
