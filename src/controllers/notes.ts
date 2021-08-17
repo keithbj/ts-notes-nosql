@@ -33,6 +33,7 @@ export const updateNote: RequestHandler = async (req: UserRequest, res: Response
     userId: req.user!,
     content: req.body.content,
     attachment: req.body.attachment,
+    createdAt: new Date().getTime(),
   };
 
   const error = validate(values);
