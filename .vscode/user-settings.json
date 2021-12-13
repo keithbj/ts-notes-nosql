@@ -1,0 +1,38 @@
+{
+  "update.mode": "manual",
+  "prettier.configPath": ".vscode/.prettierrc.json",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/*.code-search": true,
+    "**/*.log": true,
+    "**/tmp": true
+  },
+  "editor.fontSize": 14,
+  "editor.fontWeight": "200",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.formatOnSave": true,
+  "breadcrumbs.enabled": true,
+  "workbench.editor.enablePreview": false,
+	"editor.minimap.enabled": false,
+  "telemetry.enableCrashReporter": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "npm.enableRunFromFolder": true,
+  "workbench.colorCustomizations": {
+    "sideBar.background": "#2f3336",
+    "editor.background": "#2a2e30"
+  },
+	"git.confirmSync": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "aws.profile": "profile:default"
+}
